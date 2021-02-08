@@ -1,16 +1,19 @@
 package ghozti.airportsystem.flights;
 
-import java.lang.management.GarbageCollectorMXBean;
+import ghozti.airportsystem.passengers.Passengers;
+
+import java.util.ArrayList;
 
 public class Flight {
 
+    private ArrayList<Passengers> passengers = new ArrayList<>();
+
     private final int maxPassengerCount;
-    private int actualPassengerCount;
+    private int actualPassengerCount = passengers.size();
     private final String flightID, flightDestination, gate, arrival, departure;
 
-    public Flight(int maxPassengerCount, int actualPassengerCount, String flightID, String flightDestination, String gate, String arrival, String departure){
+    public Flight(int maxPassengerCount, String flightID, String flightDestination, String gate, String arrival, String departure){
         this.maxPassengerCount = maxPassengerCount;
-        this.actualPassengerCount = actualPassengerCount;
         this.flightID = flightID;
         this.flightDestination = flightDestination;
         this.gate = gate;
