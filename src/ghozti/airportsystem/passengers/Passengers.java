@@ -13,6 +13,9 @@ public class Passengers {
         this.citizen = citizen;
     }
 
+    /**
+    *GETTERS
+     */
     public String getName(){
         return name;
     }

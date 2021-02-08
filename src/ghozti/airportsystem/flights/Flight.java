@@ -6,10 +6,14 @@ import java.util.ArrayList;
 
 public class Flight {
 
+    //this array list will contain passenger objects.
     private ArrayList<Passengers> passengers = new ArrayList<>();
 
+    //this number represents the amount of passengers the flight can have at maximum. This cannot be overwritten
     private final int maxPassengerCount;
+    //the actual passenger count will be the amount of passenger objects from the array list
     private int actualPassengerCount = passengers.size();
+    //this stuff also can't be overwritten
     private final String flightID, flightDestination, gate, arrival, departure;
 
     public Flight(int maxPassengerCount, String flightID, String flightDestination, String gate, String arrival, String departure){
