@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Flight {
 
     //this array list will contain passenger objects.
-    private ArrayList<Passengers> passengers = new ArrayList<>();
+    protected ArrayList<Passengers> passengers = new ArrayList<>();
 
     //this number represents the amount of passengers the flight can have at maximum. This cannot be overwritten
     private final int maxPassengerCount;
