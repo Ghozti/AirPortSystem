@@ -1,7 +1,6 @@
 package ghozti.airportsystem.flights;
 
 import ghozti.airportsystem.passengers.Passengers;
-
 import java.util.ArrayList;
 
 public class Flight {
@@ -55,7 +54,4 @@ public class Flight {
     public String getDeparture(){
         return departure;
     }
-
-
-
 }
