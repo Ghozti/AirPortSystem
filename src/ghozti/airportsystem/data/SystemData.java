@@ -2,7 +2,7 @@ package ghozti.airportsystem.data;
 
 import java.util.ArrayList;
 
-public class systemData {
+public class SystemData {
 
     public static ArrayList<String> cities = new ArrayList<>();
     public static ArrayList<String> names = new ArrayList<>();
