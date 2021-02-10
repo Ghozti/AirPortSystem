@@ -6,6 +6,15 @@ public class systemData {
 
     public static ArrayList<String> cities = new ArrayList<>();
     public static ArrayList<String> names = new ArrayList<>();
+    public static ArrayList<String> timeAM = new ArrayList<>();
+    public static ArrayList<String>timePM = new ArrayList<>();
+
+    public void setData(){
+        setCities();
+        setNames();
+        setTimeAM();
+        setTimePM();
+    }
 
     private static void setCities(){
         cities.add("New York");
@@ -68,5 +77,35 @@ public class systemData {
         names.add("Trace");
         names.add("Zain");
         names.add("Jason");
+    }
+
+    private void setTimeAM(){
+        timeAM.add("1 AM");
+        timeAM.add("2 AM");
+        timeAM.add("3 AM");
+        timeAM.add("4 AM");
+        timeAM.add("5 AM");
+        timeAM.add("6 AM");
+        timeAM.add("7 AM");
+        timeAM.add("8 AM");
+        timeAM.add("9 AM");
+        timeAM.add("10 AM");
+        timeAM.add("11 AM");
+        timeAM.add("12 AM");
+    }
+
+    private void setTimePM(){
+        timePM.add("1 PM");
+        timePM.add("2 PM");
+        timePM.add("3 PM");
+        timePM.add("4 PM");
+        timePM.add("5 PM");
+        timePM.add("6 PM");
+        timePM.add("7 PM");
+        timePM.add("8 PM");
+        timePM.add("9 PM");
+        timePM.add("10 PM");
+        timePM.add("11 PM");
+        timePM.add("12 PM");
     }
 }
