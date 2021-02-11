@@ -9,7 +9,7 @@ public class SystemData {
     public static ArrayList<String> timeAM = new ArrayList<>();
     public static ArrayList<String>timePM = new ArrayList<>();
 
-    public void setData(){
+    public static void setData(){
         setCities();
         setNames();
         setTimeAM();
@@ -79,7 +79,7 @@ public class SystemData {
         names.add("Jason");
     }
 
-    private void setTimeAM(){
+    private static void setTimeAM(){
         timeAM.add("1 AM");
         timeAM.add("2 AM");
         timeAM.add("3 AM");
@@ -94,7 +94,7 @@ public class SystemData {
         timeAM.add("12 AM");
     }
 
-    private void setTimePM(){
+    private static void setTimePM(){
         timePM.add("1 PM");
         timePM.add("2 PM");
         timePM.add("3 PM");
