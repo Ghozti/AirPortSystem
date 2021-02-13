@@ -15,4 +15,11 @@ public class FlightUtils {
     public static void addPassenger(Flight flight,Passengers passengers){
         flight.passengers.add(passengers);
     }
+
+    public static boolean checkForCapacityOverflow(int maxCapacity,int currentCapacity){
+        if(maxCapacity < currentCapacity){
+            return true;
+        }
+        return false;
+    }
 }

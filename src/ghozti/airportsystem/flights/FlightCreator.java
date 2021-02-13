@@ -13,7 +13,7 @@ public class FlightCreator {
         String gate = (char)(r.nextInt(26) + 'A') + "" + (int) (Math.random() * (0 - 20));//flight gate
         String arrival = (int) (Math.random() * (2 + 1) + 1) == 1 ? SystemData.timeAM.get(r.nextInt(SystemData.timeAM.size())) : SystemData.timePM.get(r.nextInt(SystemData.timePM.size()));
         String departure = (int) (Math.random() * (2 + 1) + 1) == 1 ? SystemData.timeAM.get(r.nextInt(SystemData.timeAM.size())) : SystemData.timePM.get(r.nextInt(SystemData.timePM.size()));
-        /**
+        /*
          * stuff like the gate, ID, arrival , departure, and destination all rely on a randomizer. Whatever number is called will be the index called from the SystemData array lists.
          */
         return new String[] {id,destination,gate,arrival,departure};
