@@ -1,12 +1,12 @@
 package ghozti.airportsystem.flights;
 
-import ghozti.airportsystem.passengers.Passengers;
+import ghozti.airportsystem.passengers.Passenger;
 import java.util.ArrayList;
 
 public class Flight {
 
     //this array list will contain passenger objects.
-    protected ArrayList<Passengers> passengers = new ArrayList<>();
+    protected ArrayList<Passenger> passengers = new ArrayList<>();
 
     //this number represents the amount of passengers the flight can have at maximum. This cannot be overwritten
     private final int maxPassengerCount;

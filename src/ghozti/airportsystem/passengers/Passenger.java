@@ -1,12 +1,12 @@
 package ghozti.airportsystem.passengers;
 
-public class Passengers {
+public class Passenger {
 
     private final String name, gender;
     private int age;
     private final boolean citizen;
 
-    public Passengers(String name, String gender, int age, boolean citizen){
+    public Passenger(String name, String gender, int age, boolean citizen){
         this.name = name;
         this.gender = gender;
         this.age = age;
