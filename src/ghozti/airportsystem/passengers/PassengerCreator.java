@@ -40,7 +40,7 @@ public class PassengerCreator {
     private static boolean setCitizen(){
         Scanner scanner = new Scanner(System.in);
         String choice;
-        boolean citizen = false;
+        boolean citizen;
         System.out.println("Is the passenger a citizen? \n" +
                 "[y]\n" +
                 "[n]");
@@ -55,7 +55,6 @@ public class PassengerCreator {
     }
 
     public static Passenger createNewPassenger(){
-
         return new Passenger(setName(),setGender(),setAge(),setCitizen());
     }
 }

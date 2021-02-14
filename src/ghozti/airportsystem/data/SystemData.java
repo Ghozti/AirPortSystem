@@ -11,7 +11,7 @@ public class SystemData {
 
     public static void setData(){
         setCities();
-        setNames();
+        //setNames();
         setTimeAM();
         setTimePM();
     }
@@ -39,7 +39,7 @@ public class SystemData {
         cities.add("Miami");
         cities.add("Alexandria");
     }
-
+/*
     private static void setNames(){
         names.add("John");
         names.add("Marcus");
@@ -78,6 +78,7 @@ public class SystemData {
         names.add("Zain");
         names.add("Jason");
     }
+ */
 
     private static void setTimeAM(){
         timeAM.add("1 AM");
