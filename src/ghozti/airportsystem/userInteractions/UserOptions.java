@@ -5,7 +5,6 @@ import ghozti.airportsystem.flights.Flight;
 import ghozti.airportsystem.flights.FlightUtils;
 import ghozti.airportsystem.passengers.Passenger;
 import ghozti.airportsystem.passengers.PassengerCreator;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -38,7 +37,9 @@ public class UserOptions {
         FlightUtils.addPassenger(flight,passenger);
     }
 
-    public static void removePassenger(){}
+    public static void removePassenger(){
+        FlightUtils.removePassenger(removePassengerFlightChoice(),);
+    }
 
     public static void printPassengers(){}
 
@@ -74,4 +75,20 @@ public class UserOptions {
         }
         return choice;
     }
+
+    private static int removePassengerFlightChoice(){
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        System.out.println("Enter the flight to remove a passenger from");
+
+        try {
+            choice = scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("***THIS S NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+            choice = addPassengerFlightChoice();
+        }
+        return choice;
+    }
+
+    private static int getPassenger(){}
 }

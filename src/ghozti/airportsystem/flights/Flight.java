@@ -54,4 +54,13 @@ public class Flight {
     public String getDeparture(){
         return departure;
     }
+
+    public void printPassengers(){
+        for (int i = 0; i < passengers.size(); i++){
+            System.out.println("NAME: " + passengers.get(i).getName() + "\n" +
+                    "GENDER: " + passengers.get(i).getGender() + "\n" +
+                    "AGE: " + passengers.get(i).getAge() + "\n" +
+                    "CITIZEN: " + passengers.get(i).getCitizen());
+        }
+    }
 }
