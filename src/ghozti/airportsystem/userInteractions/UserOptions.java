@@ -21,7 +21,9 @@ public class UserOptions {
                 "[3] PRINT PASSENGERS\n" +
                 "[4] ADD A FLIGHT\n" +
                 "[5] REMOVE A FLIGHT\n" +
-                "[6] PRINT FLIGHTS");
+                "[6] PRINT FLIGHTS (EXPLICIT)\n" +
+                "[7] PRINT SPECIFIC FLIGHT\n" +
+                "[8] PRINT FLIGHTS");
     }
 
     /**
@@ -47,6 +49,10 @@ public class UserOptions {
     public static void addFlight(){}
 
     public static void removeFlight(){}
+
+    public static void printEFlights(){FlightData.printFlights();}
+
+    public static void printSpecificFlight(){}
 
     public static void printFlights(){}
 
