@@ -1,5 +1,14 @@
 package ghozti.airportsystem.userInteractions;
 
+import ghozti.airportsystem.data.FlightData;
+import ghozti.airportsystem.flights.Flight;
+import ghozti.airportsystem.flights.FlightUtils;
+import ghozti.airportsystem.passengers.Passenger;
+import ghozti.airportsystem.passengers.PassengerCreator;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class UserOptions {
 
     /**
@@ -18,7 +27,14 @@ public class UserOptions {
     /**
      * Passenger Related
      */
-    public static void addPassenger(){}
+    public static void addPassenger(){
+        //gets the passenger object
+        Passenger passenger = PassengerCreator.createNewPassenger();
+        //gets the flight object
+        Flight flight  = FlightData.getFlight(addPassengerFlightChoice());
+        //adds the passenger to the flight
+        FlightUtils.addPassenger(flight,passenger);
+    }
 
     public static void removePassenger(){}
 
@@ -33,4 +49,23 @@ public class UserOptions {
     public static void removeFlight(){}
 
     public static void printFlights(){}
+
+    /**
+     * Utilities
+     */
+
+    //this method will get the index of the flight to add the passenger to
+    private static int addPassengerFlightChoice(){
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        System.out.println("Enter the flight to add this passenger to");
+
+        try {
+            choice = scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("***THIS S NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+            choice = addPassengerFlightChoice();
+        }
+        return choice;
+    }
 }
