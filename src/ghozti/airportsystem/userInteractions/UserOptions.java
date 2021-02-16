@@ -31,10 +31,12 @@ public class UserOptions {
     }
 
     public static void printFlights(){
-
+        FlightData.printFlights(printDetails());
     }
 
-    public static void inspectFlights(){}
+    public static void inspectFlights(){
+        inspectMenu();
+    }
 
     /**
      * UTILITIES
@@ -71,7 +73,7 @@ public class UserOptions {
     }
 
     //this method will be used for the print flights and print flight methods
-    private boolean printDetails(){
+    private static boolean printDetails(){
         boolean printDetails = false;
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -89,5 +91,14 @@ public class UserOptions {
             printDetails = printDetails();
         }
         return false;
+    }
+
+    /*
+     * After the suer chooses to inspect flight this method will be called.
+     */
+    private static void inspectMenu(){
+        System.out.println("[1] Add passenger\n" +
+                "[2] Remove passenger\n" +
+                "[3] Print Flight");
     }
 }
