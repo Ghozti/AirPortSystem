@@ -31,7 +31,7 @@ public class FlightData {
         }
     }
 
-    public static void printFlights(int i){
+    public static void printFlight(int i){
         System.out.println("[ID] " + flightData.get(i).getFlightID() + "\n" +
                 "[Gate] " + flightData.get(i).getGate() + "\n" +
                 "[Destination] " + flightData.get(i).getFlightDestination() + "\n" +
