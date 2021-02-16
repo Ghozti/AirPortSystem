@@ -32,13 +32,13 @@ public class UserOptions {
         //gets the passenger object
         Passenger passenger = PassengerCreator.createNewPassenger();
         //gets the flight object
-        Flight flight  = FlightData.getFlight(addPassengerFlightChoice());
+        Flight flight  = FlightData.getFlight(getFlightChoice(1));
         //adds the passenger to the flight
         FlightUtils.addPassenger(flight,passenger);
     }
 
     public static void removePassenger(){
-        FlightUtils.removePassenger(removePassengerFlightChoice(),);
+        //FlightUtils.removePassenger(removePassengerFlightChoice(),);
     }
 
     public static void printPassengers(){}
@@ -62,33 +62,25 @@ public class UserOptions {
      */
 
     //this method will get the index of the flight to add the passenger to
-    private static int addPassengerFlightChoice(){
+
+    private static int getFlightChoice(int mode){
         Scanner scanner = new Scanner(System.in);
         int choice;
-        System.out.println("Enter the flight to add this passenger to");
+        switch (mode) {
+            case 1:
+                System.out.println("Enter the flight to add this passenger to");
+                break;
+            case 2:
+                System.out.println("Enter the flight to remove a passenger from");
+                break;
+        }
 
         try {
             choice = scanner.nextInt();
         }catch (InputMismatchException e){
             System.out.println("***THIS S NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-            choice = addPassengerFlightChoice();
+            choice = getFlightChoice(mode);
         }
         return choice;
     }
-
-    private static int removePassengerFlightChoice(){
-        Scanner scanner = new Scanner(System.in);
-        int choice;
-        System.out.println("Enter the flight to remove a passenger from");
-
-        try {
-            choice = scanner.nextInt();
-        }catch (InputMismatchException e){
-            System.out.println("***THIS S NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
-            choice = addPassengerFlightChoice();
-        }
-        return choice;
-    }
-
-    private static int getPassenger(){}
 }
