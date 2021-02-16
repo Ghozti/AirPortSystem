@@ -2,6 +2,8 @@ package ghozti.airportsystem.flights;
 
 import ghozti.airportsystem.passengers.Passenger;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Flight {
 
@@ -62,5 +64,29 @@ public class Flight {
                     "AGE: " + passengers.get(i).getAge() + "\n" +
                     "CITIZEN: " + passengers.get(i).getCitizen());
         }
+    }
+
+    public void printPassenger(){
+        int passenger = getPassengerIndex();
+
+        System.out.println("NAME: " + passengers.get(passenger).getName() + "\n" +
+                "GENDER: " + passengers.get(passenger).getGender() + "\n" +
+                "AGE: " + passengers.get(passenger).getAge() + "\n" +
+                "CITIZEN: " + passengers.get(passenger).getCitizen());
+    }
+
+    private int getPassengerIndex(){
+        Scanner scanner = new Scanner(System.in);
+        int index;
+        System.out.println("Enter the passenger's index");
+
+        try {
+            index = scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("***THIS IS NOT A VALID INPUT***");
+            index = getPassengerIndex();
+        }
+
+        return index;
     }
 }
