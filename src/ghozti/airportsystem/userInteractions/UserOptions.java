@@ -2,7 +2,6 @@ package ghozti.airportsystem.userInteractions;
 
 import ghozti.airportsystem.data.FlightData;
 import ghozti.airportsystem.flights.FlightCreator;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -25,6 +24,7 @@ public class UserOptions {
         try {
             FlightData.removeFlight(getFlightIndex(1));
         }catch (IndexOutOfBoundsException e){
+            //will check if the index does not match any flight index in the flight data class
             System.out.println("***INDEX DOES NOT MATCH ANY FLIGHT WITHIN DATA***");
             removeFlight();
         }
@@ -94,7 +94,7 @@ public class UserOptions {
     }
 
     /*
-     * After the suer chooses to inspect flight this method will be called.
+     * After the suer chooses to inspect flight this menu will be called.
      */
     private static void inspectMenu(){
         System.out.println("[1] Add passenger\n" +
@@ -110,19 +110,23 @@ public class UserOptions {
     private int getMenuOptions(int mode){
         Scanner scanner = new Scanner(System.in);
         int choice;
+        //by default the minimum value will be 1 and the max value will be 4 (these are the min max values for the main menu
         int min = 1,max = 4;
 
+        //we know what this does
         try {
             choice = scanner.nextInt();
         }catch (InputMismatchException e){
             System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
             choice = getMenuOptions(mode);
         }
+        //if the mode is equals to 2, then the max value will be changed to 3 (for the flight menu)
         switch (mode){
             case 2:
                 max = 3;
                 break;
         }
+        //will check for valid inputs
         if (choice < min || choice > max) {
             System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
             choice = getMenuOptions(mode);

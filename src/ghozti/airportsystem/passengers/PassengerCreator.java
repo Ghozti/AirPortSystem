@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 public class PassengerCreator {
 
+    /**
+     *THE FOLLOWING METHODS:
+     * will be used to create a new passenger object with valid values for the attributes.
+     * the user will be the one inputing these values
+     */
+
     private static String setName(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the passenger's name: ");
