@@ -101,4 +101,32 @@ public class UserOptions {
                 "[2] Remove passenger\n" +
                 "[3] Print Flight");
     }
+
+    /**
+     *The mode parameter will work similarly like the method above. I will use:
+     * [1] for the main menu
+     * [2] for the flight menu
+     */
+    private int getMenuOptions(int mode){
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        int min = 1,max = 4;
+
+        try {
+            choice = scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+            choice = getMenuOptions(mode);
+        }
+        switch (mode){
+            case 2:
+                max = 3;
+                break;
+        }
+        if (choice < min || choice > max) {
+            System.out.println("***THIS IS NOT A VALID INPUT PLEASE ENTER A VALID INPUT***");
+            choice = getMenuOptions(mode);
+        }
+        return choice;
+    }
 }
